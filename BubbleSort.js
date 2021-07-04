@@ -1,19 +1,13 @@
-function bubblesort(array)
-{
-  for(i=0;i<array.length;i++)
-  {
-    for(j=i+1;j<array.length;j++)
-    {
-      if(array[i]>array[j])
-      {
-        swap=array[i];
-        array[i]=array[j];
-        array[j]=swap;
+function sortBubble(data){
+  for(i=0;i<data.length;i++){
+    for(j=0;j<data.length-1;j++){
+      if(data[j]>data[j+1]){
+        temp=data[j];
+        data[j]=data[j+1];
+        data[j+1]=temp;
       }
     }
   }
-  return array;
+  return data
 }
-var array=[4,6,7,1,2,3];
-console.log("Array before sorting : "+array);
-console.log("Array after sorting : "+bubblesort(array));
+console.log(sortBubble([8,7,6,5,4,3,3,1]))
